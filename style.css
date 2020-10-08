@@ -1,0 +1,15 @@
+body{
+   width: 700px;
+   height: 700px;
+   border: 1px solid black;
+   display: flex;
+}
+.control{
+    background: teal;
+    flex: 1;
+}
+.control .color-picker{
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+}
