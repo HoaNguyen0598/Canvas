@@ -19,14 +19,49 @@ function draw(x,y){
     ctx.fill(circle);
 }
 
+let isMousedown = false;
 
 
 canvas.addEventListener('mousedown',e => {
     
+    isMousedown = true;
+    // const {
+    //     clientX,clientY
+    // } = e;
+
+  
+    // const react = canvas.getBoundingClientRect()
+    // draw(clientX - react.left, clientY - react.top)
+    // console.log('mousedown')
+})
+
+canvas.addEventListener('mouseup',e =>{
+   isMousedown = false;
+})
+
+canvas.addEventListener('mousemove',e =>{
+    if(!isMousedown){
+        return;
+    }
     const {
         clientX,clientY
-    } = e
+    } = e;
+
+  
     const react = canvas.getBoundingClientRect()
-    console.log(react)
-    draw(clientX - react.left,clientY - react.top)
+    draw(clientX - react.left, clientY - react.top)
+    console.log('mousedown')
 })
+
+const colorPicker = [...document.querySelectorAll('.color-picker')]
+colorPicker.forEach(colorPicker =>{
+    colorPicker.addEventListener('click', e =>{
+        ctx.fillStyle = e.target.style.backgroundColor
+    })
+})
+
+document.getElementById('btn-clear').addEventListener('click',e=>{
+    ctx.clearRect(0,0,600,700)
+})
+
+

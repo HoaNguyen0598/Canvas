@@ -3,6 +3,16 @@ body{
    height: 700px;
    border: 1px solid black;
    display: flex;
+   position: relative;
+}
+#btn-clear{
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 50px;
+    border-radius: 5px;
+    border: 1px solid #dc9120;
+    background-color: blanchedalmond;
 }
 .control{
     background: teal;
