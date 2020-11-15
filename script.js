@@ -64,4 +64,4 @@ document.getElementById('btn-clear').addEventListener('click',e=>{
     ctx.clearRect(0,0,600,700)
 })
 
-
+const ab = document.getElementById('asdsad')
